@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Calcetto – Classifica</title>
+  <meta name="description" content="Classifica del calcetto tra amici">
+  <meta name="theme-color" content="#14532d">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+  <header class="testata">
+    <h1>Calcetto</h1>
+    <p id="aggiornamento" class="sotto">Carico i dati…</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="t-classifica">
+      <div class="riga-titolo">
+        <h2 id="t-classifica">Classifica</h2>
+        <div class="scelta" role="group" aria-label="Ordina per">
+          <button type="button" data-ordine="punti" aria-pressed="true">Punti</button>
+          <button type="button" data-ordine="media" aria-pressed="false">Media</button>
+        </div>
+      </div>
+      <div id="classifica" aria-live="polite"></div>
+    </section>
+
+    <section aria-labelledby="t-partite">
+      <h2 id="t-partite">Ultime partite</h2>
+      <ul id="partite" class="partite"></ul>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

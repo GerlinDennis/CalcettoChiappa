@@ -1,0 +1,23 @@
+{
+  "eventi": [
+    {"tipo":"giocatore","id":"andrea","nome":"Andrea","rating":7},
+    {"tipo":"giocatore","id":"bruno","nome":"Bruno","rating":5},
+    {"tipo":"giocatore","id":"carlo","nome":"Carlo","rating":6},
+    {"tipo":"giocatore","id":"dario","nome":"Dario","rating":4},
+    {"tipo":"giocatore","id":"enrico","nome":"Enrico","rating":8},
+    {"tipo":"giocatore","id":"fabio","nome":"Fabio","rating":5},
+    {"tipo":"giocatore","id":"gino","nome":"Gino","rating":6},
+    {"tipo":"giocatore","id":"livio","nome":"Livio","rating":7},
+    {"tipo":"giocatore","id":"mario","nome":"Mario","rating":4},
+    {"tipo":"giocatore","id":"nico","nome":"Nico","rating":5},
+    {"tipo":"partita","squadraA":["bruno","fabio","andrea","nico","livio"],"squadraB":["dario","enrico","carlo","mario","gino"],"golA":4,"golB":0,"data":"2026-09-02"},
+    {"tipo":"partita","squadraA":["enrico","fabio","mario","andrea","dario"],"squadraB":["bruno","nico","livio","gino","carlo"],"golA":5,"golB":3,"data":"2026-09-09"},
+    {"tipo":"partita","squadraA":["enrico","fabio","carlo","andrea","mario"],"squadraB":["bruno","gino","nico","livio","dario"],"golA":8,"golB":2,"data":"2026-09-16"},
+    {"tipo":"partita","squadraA":["andrea","livio","nico","enrico","carlo"],"squadraB":["mario","dario","gino","fabio","bruno"],"golA":3,"golB":0,"data":"2026-09-23"},
+    {"tipo":"partita","squadraA":["carlo","bruno","nico","enrico","andrea"],"squadraB":["mario","fabio","livio","dario","gino"],"golA":7,"golB":8,"data":"2026-09-30"},
+    {"tipo":"partita","squadraA":["livio","andrea","dario","nico","enrico"],"squadraB":["bruno","mario","gino","carlo","fabio"],"golA":3,"golB":4,"data":"2026-10-07"},
+    {"tipo":"partita","squadraA":["carlo","mario","nico","dario","gino"],"squadraB":["fabio","bruno","livio","enrico","andrea"],"golA":6,"golB":4,"data":"2026-10-14"},
+    {"tipo":"partita","squadraA":["carlo","bruno","livio","nico","mario"],"squadraB":["fabio","enrico","dario","gino","andrea"],"golA":2,"golB":0,"data":"2026-10-21"},
+    {"tipo":"partita","squadraA":["andrea","fabio","bruno","enrico","nico"],"squadraB":["gino","mario","dario","carlo","livio"],"golA":7,"golB":6,"data":"2026-10-28"}
+  ]
+}

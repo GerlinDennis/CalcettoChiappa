@@ -1,0 +1,10 @@
+{
+  "name": "calcetto",
+  "version": "0.1.0",
+  "description": "Punteggi e classifica del calcetto tra amici",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start": "node serve.js"
+  }
+}
