@@ -1,3 +1,27 @@
 {
-  "eventi": []
+  "eventi": [
+    {"tipo":"giocatore","id":"pasti","nome":"Pasti","rating":80},
+    {"tipo":"giocatore","id":"dennis","nome":"Dennis","rating":88},
+    {"tipo":"giocatore","id":"bobo","nome":"Bobo","rating":89},
+    {"tipo":"giocatore","id":"berto","nome":"Berto","rating":87},
+    {"tipo":"giocatore","id":"fabiob","nome":"Fabio.B","rating":85},
+    {"tipo":"giocatore","id":"gabri","nome":"Gabri","rating":86},
+    {"tipo":"giocatore","id":"chinne","nome":"Chinne","rating":81},
+    {"tipo":"giocatore","id":"checco","nome":"Checco","rating":87},
+    {"tipo":"giocatore","id":"cicu","nome":"Cicu","rating":81},
+    {"tipo":"giocatore","id":"dose","nome":"Dose","rating":83},
+    {"tipo":"giocatore","id":"drini","nome":"Drini","rating":86},
+    {"tipo":"giocatore","id":"leoruzza","nome":"LeoRuzza","rating":87},
+    {"tipo":"giocatore","id":"leocicu","nome":"LeoCicu","rating":81},
+    {"tipo":"giocatore","id":"morbido","nome":"Morbido","rating":84},
+    {"tipo":"giocatore","id":"nico","nome":"Nico","rating":84},
+    {"tipo":"giocatore","id":"peeta","nome":"Peeta","rating":81},
+    {"tipo":"giocatore","id":"ricky","nome":"Ricky","rating":89},
+    {"tipo":"giocatore","id":"simonetti","nome":"Simonetti","rating":88},
+    {"tipo":"giocatore","id":"scottie","nome":"Scottie","rating":87},
+    {"tipo":"giocatore","id":"seba","nome":"Seba","rating":83},
+    {"tipo":"giocatore","id":"silvio","nome":"Silvio","rating":85},
+    {"tipo":"giocatore","id":"marco","nome":"Marco","rating":82},
+    {"tipo":"partita","squadraA":["bobo","chinne","dose","fabiob","cicu"],"squadraB":["gabri","marco","peeta","leocicu","checco"],"golA":11,"golB":10,"data":"2026-10-14"}
+  ]
 }
