@@ -96,6 +96,38 @@ function disegnaPartite() {
   );
 }
 
+function disegnaGiocatori() {
+  const contenitore = document.getElementById("giocatori");
+  const lista = Object.values(stato.giocatori).sort(
+    (a, b) => b.rating - a.rating || a.nome.localeCompare(b.nome),
+  );
+
+  if (lista.length === 0) {
+    contenitore.replaceChildren(el("p", { class: "vuoto" }, "Nessun giocatore inserito."));
+    return;
+  }
+
+  const intestazione = el(
+    "tr",
+    {},
+    el("th", { scope: "col", class: "pos" }, "#"),
+    el("th", { scope: "col", class: "nome" }, "Giocatore"),
+    el("th", { scope: "col" }, "Rating"),
+  );
+  const corpo = lista.map((g, i) =>
+    el(
+      "tr",
+      {},
+      el("td", { class: "pos" }, String(i + 1)),
+      el("td", { class: "nome" }, g.nome),
+      el("td", { class: "attiva" }, numero(g.rating)),
+    ),
+  );
+  contenitore.replaceChildren(
+    el("table", { class: "tabella tabella-rating" }, el("thead", {}, intestazione), el("tbody", {}, ...corpo)),
+  );
+}
+
 function disegnaTestata() {
   const nGiocatori = Object.keys(stato.giocatori).length;
   const nPartite = stato.partite.length;
@@ -109,6 +141,7 @@ function mostraErrore(messaggio) {
   document.getElementById("aggiornamento").textContent = "Qualcosa non va";
   document.getElementById("classifica").replaceChildren(el("p", { class: "errore" }, messaggio));
   document.getElementById("partite").replaceChildren();
+  document.getElementById("giocatori").replaceChildren();
 }
 
 async function avvia() {
@@ -124,6 +157,7 @@ async function avvia() {
   disegnaTestata();
   disegnaClassifica();
   disegnaPartite();
+  disegnaGiocatori();
 }
 
 for (const bottone of document.querySelectorAll(".scelta button")) {

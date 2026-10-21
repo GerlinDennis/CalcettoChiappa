@@ -111,6 +111,9 @@ h2 { margin: 0; font-size: 1.1rem; }
 .tabella .attiva { background: var(--attiva); font-weight: 700; }
 .tabella tbody tr:nth-child(-n+3) .pos { color: var(--accento); font-weight: 700; }
 
+/* Rating: la tabella è la stessa della classifica, solo senza il colore dei primi 3 */
+.tabella-rating tbody tr:nth-child(-n+3) .pos { color: var(--tenue); font-weight: 400; }
+
 /* Ultime partite */
 .partite { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
 .partita {
@@ -138,3 +141,5 @@ h2 { margin: 0; font-size: 1.1rem; }
   color: var(--tenue);
 }
 .errore { border-color: var(--perde); color: var(--perde); }
+
+#t-giocatori { margin-bottom: 10px; }
