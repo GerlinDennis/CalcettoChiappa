@@ -22,6 +22,7 @@
     {"tipo":"giocatore","id":"seba","nome":"Seba","rating":83},
     {"tipo":"giocatore","id":"silvio","nome":"Silvio","rating":85},
     {"tipo":"giocatore","id":"marco","nome":"Marco","rating":82},
-    {"tipo":"partita","squadraA":["bobo","chinne","dose","fabiob","cicu"],"squadraB":["gabri","marco","peeta","leocicu","checco"],"golA":11,"golB":10,"data":"2026-10-14"}
+    {"tipo":"partita","squadraA":["bobo","chinne","dose","fabiob","cicu"],"squadraB":["gabri","marco","peeta","leocicu","checco"],"golA":11,"golB":10,"data":"2026-10-14"},
+    {"tipo":"partita","squadraA":["dennis","bobo","leocicu","pasti","checco"],"squadraB":["leoruzza","simonetti","chinne","peeta","scottie"],"golA":15,"golB":10,"data":"2026-10-26"}
   ]
 }
