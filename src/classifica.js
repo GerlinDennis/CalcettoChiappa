@@ -17,13 +17,13 @@ export function calcolaClassifica(stato, { ordinaPer = "punti" } = {}) {
     for (const id of p.squadraA) {
       const r = riga(id);
       r.partite += 1;
-      r.punti = Math.max(0, r.punti + p.puntiA); // il totale non scende mai sotto 0
+      r.punti += p.puntiA;
       r.diffReti += p.golA - p.golB;
     }
     for (const id of p.squadraB) {
       const r = riga(id);
       r.partite += 1;
-      r.punti = Math.max(0, r.punti + p.puntiB); // il totale non scende mai sotto 0
+      r.punti += p.puntiB;
       r.diffReti += p.golB - p.golA;
     }
   }
