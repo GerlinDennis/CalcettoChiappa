@@ -95,9 +95,9 @@ async function main(argv) {
       }
       console.log(`Classifica (ordinata per ${ordinaPer})`);
       console.log("  #  Giocatore        Part.  Punti  Diff.  Media");
-      righe.forEach((r, i) => {
+      righe.forEach((r) => {
         console.log(
-          `${String(i + 1).padStart(3)}  ${r.nome.padEnd(15)} ${String(r.partite).padStart(5)}  ` +
+          `${String(r.pos ?? "SV").padStart(3)}  ${r.nome.padEnd(15)} ${String(r.partite).padStart(5)}  ` +
             `${fmt(r.punti).padStart(5)}  ${String(r.diffReti).padStart(5)}  ${fmt(Math.round(r.media * 100) / 100).padStart(5)}`,
         );
       });
