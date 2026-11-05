@@ -37,19 +37,19 @@ test("cambiare un rating dopo non modifica i punti delle partite passate", () =>
   assert.equal(s.partite[0].ratingSalvati.a, 5);
 });
 
-test("il +/-1 si somma dopo ogni partita, a partire dalla quinta", () => {
+test("il +/-1 si somma alla quinta partita e poi ogni due", () => {
   let s = stato4();
   const ratingA = [];
   const ratingC = [];
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     s = registraPartita(s, { squadraA: ["a", "b"], squadraB: ["c", "d"], golA: 2, golB: 1 });
     ratingA.push(s.giocatori.a.rating);
     ratingC.push(s.giocatori.c.rating);
   }
-  // A vince sempre: invariato fino alla 4a, poi +1 alla 5a e +1 alla 6a
-  assert.deepEqual(ratingA, [5, 5, 5, 5, 6, 7]);
-  // C perde sempre: invariato fino alla 4a, poi -1 alla 5a e -1 alla 6a
-  assert.deepEqual(ratingC, [5, 5, 5, 5, 4, 3]);
+  // A vince sempre: invariato fino alla 4a, +1 alla 5a, fermo alla 6a, +1 alla 7a
+  assert.deepEqual(ratingA, [5, 5, 5, 5, 6, 6, 7]);
+  // C perde sempre: invariato fino alla 4a, -1 alla 5a, fermo alla 6a, -1 alla 7a
+  assert.deepEqual(ratingC, [5, 5, 5, 5, 4, 4, 3]);
 });
 
 test("errori: pareggio, giocatore sconosciuto, giocatore in due squadre, squadra vuota", () => {

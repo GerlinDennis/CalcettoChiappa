@@ -47,6 +47,38 @@ test("chi non ha mai giocato non compare", () => {
   assert.ok(!ids.includes("z"));
 });
 
+// "e" gioca (e vince) solo la prima partita; le altre sono tra a,b,c,d.
+function scenarioSv(partite) {
+  let s = nuovoStato();
+  for (const id of ["a", "b", "c", "d", "e"]) s = aggiungiGiocatore(s, id, id, 5);
+  s = registraPartita(s, { squadraA: ["e", "a"], squadraB: ["b", "c"], golA: 9, golB: 0 });
+  for (let i = 1; i < partite; i++) {
+    s = registraPartita(s, { squadraA: ["a", "b"], squadraB: ["c", "d"], golA: 2, golB: 1 });
+  }
+  return s;
+}
+
+test("esattamente 1/3 delle partite: resta in classifica", () => {
+  const righe = calcolaClassifica(scenarioSv(3));
+  assert.ok(righe.every((r) => !r.sv));
+  assert.deepEqual(righe.map((r) => r.pos), [1, 2, 3, 4, 5]);
+});
+
+test("meno di 1/3 delle partite: in fondo con SV, anche se ha piu punti di altri", () => {
+  const righe = calcolaClassifica(scenarioSv(4));
+  const ultima = righe.at(-1);
+  assert.equal(ultima.id, "e");
+  assert.equal(ultima.sv, true);
+  assert.equal(ultima.pos, null);
+  assert.deepEqual(righe.slice(0, -1).map((r) => r.pos), [1, 2, 3, 4]);
+});
+
+test("SV in fondo anche ordinando per media", () => {
+  const righe = calcolaClassifica(scenarioSv(4), { ordinaPer: "media" });
+  assert.equal(righe.at(-1).id, "e"); // ha la media piu alta di tutti
+  assert.ok(righe.at(-1).media > righe[0].media);
+});
+
 test("classifica vuota senza partite", () => {
   assert.deepEqual(calcolaClassifica(nuovoStato()), []);
 });

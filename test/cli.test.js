@@ -39,6 +39,17 @@ test("giocatori, partita e classifica da riga di comando", async () => {
   assert.ok(classifica.out.indexOf("Anna") < classifica.out.indexOf("Cico"));
 });
 
+test("classifica: chi ha meno di 1/3 delle partite ha SV", async () => {
+  const { esegui } = await nuovaSessione();
+  for (const [id, nome] of [["a", "Anna"], ["b", "Bea"], ["c", "Cico"]]) esegui("giocatore", id, nome, "5");
+  esegui("partita", "c", "b", "4", "1");
+  for (let i = 0; i < 3; i++) esegui("partita", "a", "b", "2", "1");
+
+  const out = esegui("classifica").out;
+  assert.match(out, /^ +1 +Anna/m);
+  assert.match(out, /^ +SV +Cico/m);
+});
+
 test("partita non valida: errore e il file non cambia", async () => {
   const { file, esegui } = await nuovaSessione();
   esegui("giocatore", "a", "Anna", "5");
