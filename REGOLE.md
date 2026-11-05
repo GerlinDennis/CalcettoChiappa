@@ -11,11 +11,11 @@ Le squadre NON le fa l'app: le fate voi a parte. L'app serve solo per punti, rat
 ## 1. Rating dei giocatori
 
 - Ogni giocatore ha un rating di base: la **media delle valutazioni** date dagli amici. Si inserisce una volta.
-- Il rating **attuale** parte dal rating di base e cambia **dopo ogni partita**, ma solo se il giocatore ne ha giocate **almeno 5**: si guardano le **ultime 5** e si **somma** al rating attuale:
+- Il rating **attuale** parte dal rating di base e cambia alla **5ª partita** del giocatore e poi **ogni 2 partite** (7ª, 9ª, 11ª...): si guardano le **ultime 5** e si **somma** al rating attuale:
   - più vittorie che sconfitte → **+1**
   - più sconfitte che vittorie → **−1**
-- Fino alla 5ª partita il rating resta quello di base.
-- Il ±1 è **cumulativo**: si somma al rating attuale, non al rating di base. Attenzione: chi vince spesso sale di 1 a ogni partita, quindi nel tempo i rating possono crescere o scendere molto. Da tenere d'occhio (si cambia in un solo punto: `src/rating.js`).
+- Prima della 5ª partita il rating resta quello di base; nelle partite in mezzo (6ª, 8ª, 10ª...) non cambia.
+- Il ±1 è **cumulativo**: si somma al rating attuale, non al rating di base. Attenzione: chi vince spesso sale di 1 ogni 2 partite, quindi nel tempo i rating possono crescere o scendere molto. Da tenere d'occhio (si cambia in un solo punto: `src/rating.js`).
 - L'admin può **modificare il rating a mano** quando vuole; da lì in poi gli aggiornamenti ripartono dal nuovo valore.
 - Il rating usato per i punti di una partita viene **salvato nella partita**: cambiare un rating dopo non modifica i punti già assegnati.
 - Il rating di una squadra = **somma** dei rating dei suoi giocatori.
@@ -67,6 +67,7 @@ Colonne: **Giocatore, Partite giocate, Punti totali, Differenza reti, Media punt
 - Differenza reti di un giocatore = gol fatti − gol subiti dalle sue squadre nelle partite che ha giocato.
 - Ordine di default: **punti totali**. Toccando "Media" si riordina per media.
 - A parità, decide la **differenza reti**.
+- Per entrare in classifica serve aver giocato **almeno 1/3 delle partite totali**. Chi ne ha di meno sta in fondo, ordinato con gli stessi criteri, e al posto della posizione ha **SV**.
 
 ---
 
@@ -81,12 +82,12 @@ Colonne: **Giocatore, Partite giocate, Punti totali, Differenza reti, Media punt
 - **Dati salvati come elenco di eventi (non come stato):** così si può annullare o correggere una riga e tutto si ricalcola.
 - **Rating salvato in ogni partita:** così i punti già assegnati non cambiano mai, anche se un rating viene modificato dopo.
 - **Nessun ±1 prima della 5ª partita:** finché non ci sono 5 partite il rating resta quello di base.
-- **±1 cumulativo dopo ogni partita:** scelta dell'admin, anche se fa crescere i rating più in fretta (vedi "Da decidere").
+- **±1 cumulativo ogni 2 partite dalla 5ª:** scelta dell'admin, anche se fa crescere i rating più in fretta (vedi "Da decidere").
 
 ## Da decidere / da controllare
 
 - **Squadre di dimensione diversa** (es. 4 contro 5): l'app non lo controlla; la somma dei rating ne risentirebbe. Da decidere se vietarlo.
-- **Crescita dei rating:** con il ±1 cumulativo dopo ogni partita i rating possono andare molto in alto o in basso. Se dà problemi, valutare un limite oppure l'aggiornamento ogni 5 partite.
+- **Crescita dei rating:** con il ±1 cumulativo ogni 2 partite i rating possono andare molto in alto o in basso. Se dà problemi, valutare un limite oppure l'aggiornamento ogni 5 partite.
 - **Tecnologia:** pagina su GitHub Pages / Netlify / Cloudflare Pages, dati su Firebase o Supabase (piani gratuiti). Da scegliere.
 
 ## Prossimi passi
