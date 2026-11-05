@@ -44,11 +44,11 @@ function disegnaClassifica() {
     ),
   );
 
-  const corpo = righe.map((r, i) =>
+  const corpo = righe.map((r) =>
     el(
       "tr",
-      {},
-      el("td", { class: "pos" }, String(i + 1)),
+      { class: r.sv ? "sv" : "" },
+      el("td", { class: "pos" }, String(r.pos ?? "SV")),
       el("td", { class: "nome" }, r.nome),
       el("td", {}, String(r.partite)),
       el("td", { class: ordinaPer === "punti" ? "attiva" : "" }, numero(r.punti)),

@@ -110,6 +110,7 @@ h2 { margin: 0; font-size: 1.1rem; }
 .tabella td:last-child, .tabella th:last-child { padding-right: 12px; }
 .tabella .attiva { background: var(--attiva); font-weight: 700; }
 .tabella tbody tr:nth-child(-n+3) .pos { color: var(--accento); font-weight: 700; }
+.tabella tbody tr.sv .pos { color: var(--tenue); font-weight: 400; }
 
 /* Rating: la tabella è la stessa della classifica, solo senza il colore dei primi 3 */
 .tabella-rating tbody tr:nth-child(-n+3) .pos { color: var(--tenue); font-weight: 400; }
