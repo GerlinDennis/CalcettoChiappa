@@ -34,9 +34,11 @@ export function puntiPartita({ ratingA, ratingB, golA, golB }) {
   if (ratingVincente < ratingPerdente) vincente += effettoRating; // era la sfavorita
   vincente = Math.max(0, vincente);
 
-  // Squadra che perde: parte da 0, non riceve mai punti dal rating.
+  // Squadra che perde: parte da 0, e il rating conta come per chi vince:
+  // -0,5 ogni 3 di differenza se era la favorita, +0,5 se era la sfavorita.
   let perdente = -bonusGol;
   if (ratingPerdente > ratingVincente) perdente -= effettoRating; // era la favorita
+  if (ratingPerdente < ratingVincente) perdente += effettoRating; // era la sfavorita
   perdente += 0; // evita il "-0"
 
   return vinceA ? { A: vincente, B: perdente } : { A: perdente, B: vincente };
