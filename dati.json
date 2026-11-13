@@ -24,6 +24,9 @@
     {"tipo":"giocatore","id":"marco","nome":"Marco","rating":82},
     {"tipo":"partita","squadraA":["bobo","chinne","dose","fabiob","cicu"],"squadraB":["gabri","marco","peeta","leocicu","checco"],"golA":11,"golB":10,"data":"2026-10-14"},
     {"tipo":"partita","squadraA":["dennis","bobo","leocicu","pasti","checco"],"squadraB":["leoruzza","simonetti","chinne","peeta","scottie"],"golA":15,"golB":10,"data":"2026-10-26"},
-    {"tipo":"partita","squadraA":["dennis","leoruzza","pasti","chinne","scottie"],"squadraB":["bobo","leocicu","peeta","berto","gabri"],"golA":18,"golB":17,"data":"2026-11-04"}
+    {"tipo":"partita","squadraA":["dennis","leoruzza","pasti","chinne","scottie"],"squadraB":["bobo","leocicu","peeta","berto","gabri"],"golA":18,"golB":17,"data":"2026-11-04"},
+    {"tipo":"giocatore","id":"achille","nome":"Achille","rating":86},
+    {"tipo":"rating","id":"scottie","rating":86},
+    {"tipo":"partita","squadraA":["dennis","peeta","dose","scottie","checco"],"squadraB":["bobo","pasti","silvio","simonetti","achille"],"golA":10,"golB":11,"data":"2026-11-11"}
   ]
 }
